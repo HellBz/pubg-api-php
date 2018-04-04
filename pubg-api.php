@@ -47,7 +47,7 @@ class PubgWrapper {
             curl_setopt($request, CURLOPT_POSTFIELDS, $body);
         }
         curl_setopt($request, CURLOPT_CUSTOMREQUEST, $method);
-        curl_setopt($request, CURLOPT_HTTPHEADER, array('Authorization: ' . $this->accessToken, 'Accept: application/vnd.api+json'));
+        curl_setopt($request, CURLOPT_HTTPHEADER, array('Authorization: Bearer ' . $this->accessToken, 'Accept: application/vnd.api+json'));
         $responseBody = curl_exec($request);
         if ($this->debug) {
             echo "PUBG REquest : $responseBody \n";
